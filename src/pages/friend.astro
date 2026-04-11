@@ -1,10 +1,11 @@
 ---
-import { getEntry, render } from "astro:content";
+import {getEntry, render} from "astro:content";
 import Markdown from "@components/misc/Markdown.astro";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import FriendLinkCard from "@components/misc/FriendLinkCard.astro";
-import { friendLinks } from "@/config";
-import { Icon } from "astro-icon/components";
+import {friendLinks} from "@/config";
+import {Icon} from "astro-icon/components";
+import Twikoo from "../components/comment/Twikoo.astro";
 
 const linksPost = await getEntry("spec", "friend");
 
@@ -12,7 +13,7 @@ if (!linksPost) {
     throw new Error("Links page content not found");
 }
 
-const { Content } = await render(linksPost);
+const {Content} = await render(linksPost);
 ---
 <MainGridLayout title="友链" description="友情链接">
     <!-- 友链卡片区域 - 放在最前面 -->
@@ -20,7 +21,7 @@ const { Content } = await render(linksPost);
             <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 mb-6">
                 <div class="card-base z-10 px-9 py-6 relative w-full">
                     <div class="flex items-center gap-3 mb-6">
-                        <Icon name="material-symbols:group-rounded" class="text-3xl text-[var(--primary)]" />
+                        <Icon name="material-symbols:group-rounded" class="text-3xl text-[var(--primary)]"/>
                         <h2 class="text-2xl font-bold text-[var(--primary)]">友链列表</h2>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -41,8 +42,12 @@ const { Content } = await render(linksPost);
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full">
             <Markdown class="mt-2">
-                <Content />
+                <Content/>
             </Markdown>
         </div>
     </div>
+    <br>
+
+
+
 </MainGridLayout>

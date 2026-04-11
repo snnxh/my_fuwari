@@ -1,7 +1,12 @@
 # 关于
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+博客模板是fork [Fuwari](https://github.com/saicaca/fuwari)大佬的
 
-::github{repo="snnxh/my_fuwari"}
+# 大佬的github地址
+::github{repo="saicaca/fuwari"}
+
+# 关于我自己
+
+
 
 > ### Sources of images used in this site
 > - [Unsplash](https://unsplash.com/)

@@ -1,7 +1,7 @@
 ---
 import path from "node:path";
-import { Image } from "astro:assets";
-import { url } from "../../utils/url-utils";
+import {Image} from "astro:assets";
+import {url} from "../../utils/url-utils";
 
 interface Props {
     name: string;
@@ -10,7 +10,7 @@ interface Props {
     avatar?: string;
 }
 
-const { name, url: linkUrl, description, avatar } = Astro.props;
+const {name, url: linkUrl, description, avatar} = Astro.props;
 
 // 判断头像路径类型
 const isExternal = avatar?.startsWith("http://") || avatar?.startsWith("https://");
